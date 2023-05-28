@@ -8,16 +8,23 @@
 </head>
 <body>
     <template name="red-h1">
-        <h1 style="color:red">
+        <h1 >
             <slot name ="bar"></slot>
             <slot name="foo" ></slot>
-             <slot ></slot>         
+            <slot ></slot> 
+            <style type="text/css">
+                h1 {color:red;}
+            
+                </style>     
         </h1>
     </template>
-    <script src="index.js"></script>
+
     <red-h1>This will render in red!
         <p slot="foo">Foo</p>
         <p slot="bar">bar</p>
     </red-h1>
+    <h1>另一个h1</h1>
+    <script src="index.js"></script>
+   
 </body>
 </html>
