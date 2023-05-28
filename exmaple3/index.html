@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <template name="red-h1">
+        <h1 style="color:red">
+            <slot></slot>
+        </h1>
+    </template>
+    <div>
+        <red-h1 data-mark="name"></red-h1> <button onclick="handleChangeName()">修改名字</button>
+        <red-h1 data-mark="age"></red-h1><button onclick="handleChangeAge()">修改年龄</button>
+    </div>
+    <script src="./index.js"></script>
+    <script>
+        const user = new Proxy({}, handler);
+        user.name = 'Liuyi';
+        user.age = 12;
+
+        const handleChangeName = () => {
+            user.name = 'wang'
+        }
+
+        const handleChangeAge = () => {
+            user.age = 30
+        } 
+    </script>
+</body>
+
+</html>

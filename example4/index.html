@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template name="my-ul">
+       <ul style="list-style-type:none"><slot></slot></ul>
+    </template>
+    <template name="my-li">
+        <li style="color:blue">
+            <slot></slot>
+        </li>
+    </template>
+
+    <div>
+        <my-ul>
+            <my-li data-mark="item1">{item1}<input value="{item1}" oninput="onChange(this,'item1')" /> </my-li>
+            <my-li data-mark="item2">{item2}<input value="{item2}" oninput="onChange(this,'item2')" /> </my-li>
+        </my-ul>
+    </div>
+    <script src="index.js"></script>
+    <script>
+     $data.item1='aaa'
+     $data.item2='bbb'
+     function onChange(event,prop){
+        $data[prop]=event.value
+     }
+    </script>
+</body>
+</html>
